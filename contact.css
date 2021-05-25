@@ -1,0 +1,273 @@
+.contactLoader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: url(images/contactLoader.png) 50% 50% no-repeat #263238;
+}
+
+
+.contactUsSection {
+    width: 100vw;
+    height: 110vh;
+    background-color: aqua;
+    position: relative;
+    display: flex;
+}
+
+iframe {
+    flex-basis: 100%;
+}
+
+.contactUsImage img {
+    width: 40vw;
+    height: 100%;
+}
+
+.contactUsDiv {
+    width: 450px;
+    background-color: #A62A21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    z-index: 1;
+
+}
+
+.contactUsHeading {
+    color: #F5BC53;
+}
+
+.contactUsForm {
+    background-color: transparent;
+    /* padding: 30px; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75vh;
+    justify-content: space-between;
+    border-radius: 0px 0px 20px 20px;
+}
+
+input {
+    border: none;
+    border-bottom: 1.5px solid;
+    border-color: #F5BC53;
+    /* border-radius: 5px; */
+    padding: 5px;
+    margin: 10px 0;
+    background-color: transparent;
+    color: white;
+    font-weight: 500;
+
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #F08234;
+}
+
+textarea {
+    background-color: transparent;
+    border: 1.5px solid;
+    color: white;
+    border-color: #F5BC53;
+    border-radius: 5px;
+}
+
+textarea:focus {
+    outline: none;
+    border: 2px solid #F08234;
+}
+
+.submitButtonDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.submitButton {
+    background-color: #F5BC53;
+    color: white;
+    border: 1px solid #F5BC53;
+    max-width: 50%;
+    border-radius: 10px;
+    padding: 2% 4%;
+    font-weight: 500;
+    transition: all ease 0.3s;
+}
+
+.submitButton:hover {
+    background-color: white;
+    color: orange;
+}
+
+.mapSmallScreen {
+    display: none;
+}
+
+.map-wide-screen {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.mapSmallScreenSection{
+    display: none;
+}
+
+::placeholder {
+    color: white;
+    font-weight: 500;
+}
+
+
+.thankYouSection{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.9); */
+    z-index: 100;
+    display: none;
+}
+
+.thankYouBackground{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 90;
+    display: none;
+}
+
+
+input[type="time"]::-webkit-calendar-picker-indicator{
+        filter: invert(100%);
+  }
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+        filter: invert(100%);
+  }
+
+.thankYouDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 40vw;
+    width: 40vw;
+    background-color: #263238;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2vw;
+    color: white;
+    border-radius: 25px;
+    border: #F5BC53 3px solid;
+    z-index: 100;
+}
+
+.thankYouLogo{
+    width: 120px;
+    height: auto;
+    /* position: absolute;
+    top: 2vw;
+    left: 2vw; */
+}
+
+.thankYouHeading{
+    font-size: 3rem;
+}
+
+.thankYouCross{
+    position: absolute;
+    top: 3%;
+    right: 4%;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.thankYouCross:hover{
+    color: #F5BC53;
+}
+
+/* .thankYouLogo{
+    /* transform: scale(0.3); 
+} */
+
+
+@media screen and (max-width:800px) {
+
+    .footer{
+        margin-top: 20vh;
+    }
+    .mapSmallScreenSection {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .smallScreenHeadingDiv{
+        width: 100vw;
+        height: 20vh;
+        padding: 50px;
+        background-color: blueviolet;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .smallScreenHeading , .contactUsHeading{
+        font-size: 3rem;
+    }
+
+    .contactUsSection{
+        background: url(images/book-a-table.jpg);
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
+    }
+    .map-wide-screen {
+        display: none;
+    }
+
+    .mapSmallScreen {
+        display: block;
+        height: 80vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    .contactUsDiv{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.thankYouDiv{
+    top: 50%;
+    width: 70vw;
+    height: 60vh;
+}
+
+@media screen and (max-width:600px) {
+    .thankYouDiv{
+        height: 80vh;
+    }
+}
