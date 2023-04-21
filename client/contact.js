@@ -44,6 +44,7 @@ const placeOrder = () => {
     formData.set("reservationDate", reservationDate);
     formData.set("reservationTime", reservationTime);
     formData.set("instructions", instructions);
+    const thankYouHeading = document.getElementById('thankYouHeading');
     fetch(`${host}/reservation/create`, {
             method: "POST",
             body: formData,
@@ -60,11 +61,11 @@ const placeOrder = () => {
         })
         .then((data) => {
             loadNumberOfTables()
+            thankYouHeading.innerText = `Thank You For Giving Us The Service`;
             thankYouAppear();
         }).catch((error) => {
             const errorMessage = error.message;
-            const errorDiv = document.getElementById('thankYouHeading');
-            errorDiv.innerText = errorMessage;
+            thankYouHeading.innerText = errorMessage;
             thankYouAppear();
         });
 
