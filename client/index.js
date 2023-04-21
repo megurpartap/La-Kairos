@@ -9,16 +9,6 @@ $(document).ready(function () {
     $(".thankYouSection").css("display", "none");
     $(".thankYouBackground").css("display", "none");
   });
-  $(".contactUsForm").submit(function (e) {
-    e.preventDefault();
-    thankYouAppear();
-  });
-  
-  function thankYouAppear() {
-    $(".submitButton").attr("id", "restartConfetti");
-    $(".thankYouBackground").css("display", "block");
-    $(".thankYouSection").css("display", "block");
-  }
 });
 
 var headerTop = $(".header").offset().top;
@@ -197,10 +187,3 @@ new Skroll()
     duration: 700,
   })
   .init();
-
-
-
-
-
-
-

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Kairos | Reserve A Table</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/cff79052c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+    />
+    <script src="skroll.min.js"></script>
+  </head>
+
+  <body onload="loadNumberOfTables()">
+    <!-- loader starts -->
+    <div class="loaderBackground"></div>
+    <div class="loader"></div>
+    <!-- loader ends -->
+
+    <!-- Navigation Bar Starts -->
+    <section class="navigationBarSection">
+      <nav class="navigationBar">
+        <a href="index.html"
+          ><img class="logo" src="images/navigationLogo.png" alt="LOGO"
+        /></a>
+        <ul class="navbarList">
+          <li class="navBarItem"><a href="index.html">Home</a></li>
+          <li class="navBarItem"><a href="menu.html">Menu</a></li>
+          <li class="navBarItem reserveTableButton">
+            <a href="contact.html">Reserve A Table</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Navigation Bar Ends -->
+
+    <section class="contactUsSection">
+      <div class="map-wide-screen">
+        <iframe
+          class="custom-google-map"
+          style="position: relative; top: -50px; border: none"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1nBbaul58bjb00EiE8HAwCgIo2gDHusQN"
+          width="100%"
+          height="110%"
+        ></iframe>
+      </div>
+
+      <!-- <div class="contactUsImage">
+            <img src="images/book-a-table.jpg" alt="Book A Table">
+        </div> -->
+      <div class="contactUsDiv">
+        <h1 class="contactUsHeading">Book A Table</h1>
+        <h3
+          id="tableNumbers"
+          style="color: white; font-size: 16px; text-align: center"
+        ></h3>
+        <form class="contactUsForm" id="contactUsForm" action="#">
+          <input
+            type="text"
+            name="Name"
+            id="nameInput"
+            class="nameInput"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="email"
+            name="Email"
+            id="emailInput"
+            class="emailInput"
+            placeholder="E-mail"
+          />
+          <input
+            type="tel"
+            name="Phone"
+            id="phoneInput"
+            class="phoneInput"
+            placeholder="Mobile Number"
+            required
+          />
+          <input
+            type="number"
+            name="Seats"
+            id="seatInput"
+            class="seatInput"
+            min="1"
+            max="10"
+            placeholder="No. Of People"
+            required
+          />
+          <input
+            type="date"
+            name="date"
+            id="dateInput"
+            class="dateInput"
+            placeholder="Date Of Reservation"
+            min="${new Date().toISOString().split('T')[0]}"
+            required
+          />
+          <input
+            type="time"
+            name="time"
+            id="timeInput"
+            class="timeInput"
+            placeholder="Time Of Reservation"
+            required
+          />
+          <textarea
+            name="Message"
+            id="InstructionsInput"
+            cols="30"
+            rows=""
+            placeholder="Any Special Instruction?"
+          ></textarea>
+          <!-- <div class="submitButtonDiv"> -->
+          <input type="submit" value="Book A Table" class="submitButton" />
+          <!-- </div> -->
+        </form>
+      </div>
+    </section>
+
+    <section class="mapSmallScreenSection">
+      <div class="smallScreenHeadingDiv">
+        <h1 class="smallScreenHeading">Reach Us At</h1>
+      </div>
+      <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1nBbaul58bjb00EiE8HAwCgIo2gDHusQN" width="100%" height="100%"></iframe> -->
+      <div
+        style="height: 100%; width: 100%; overflow: hidden"
+        class="mapSmallScreen"
+      >
+        <iframe
+          class="custom-google-map"
+          style="position: relative; top: -50px; border: none"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1nBbaul58bjb00EiE8HAwCgIo2gDHusQN"
+          width="100%"
+          height="110%"
+        ></iframe>
+      </div>
+
+      <!-- <div class="contactUsImage">
+            <img src="images/book-a-table.jpg" alt="Book A Table">
+        </div> -->
+    </section>
+
+    <section class="thankYouBackground"></section>
+    <section class="thankYouSection">
+      <div class="thankYouDiv">
+        <div class="thankYouCross" id="stopConfetti">
+          <i class="fas fa-times"></i>
+        </div>
+        <img src="images/thankYouLogo.png" alt="" class="thankYouLogo" />
+        <h2 class="thankYouHeading" id="thankYouHeading">
+          Thank You For Giving Us The Service
+        </h2>
+        <!-- <p class="thankYouPara">Lorem ipsum dolor sit amet <span class="seatNumberBooked">hello</span>, adipisicing elit. Tenetur accusamus cum quaerat veritatis ratione cupiditate odio iste incidunt molestias ullam. Vel laudantium id eos aut.</p> -->
+      </div>
+    </section>
+
+    <section class="footerSection">
+      <footer class="footer">
+        <div class="footerDiv1">
+          <img class="footerLogo" src="images/thin.png" alt="Footer Logo" />
+          <p class="footerDiv1para">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Reprehenderit, dolor repellendus molestiae accusantium inventore
+            reiciendis laboriosam maxime repudiandae impedit recusandae mollitia
+            voluptatibus hic sequi voluptatum.
+          </p>
+        </div>
+        <div class="footerDiv2">
+          <ul class="footerDiv2List footerDivList">
+            <li class="footerDivListItem footerDivListFirstItem">
+              Lorem ipsum
+            </li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+          </ul>
+        </div>
+        <div class="footerDiv3">
+          <ul class="footerDiv3List footerDivList">
+            <li class="footerDivListItem footerDivListFirstItem">
+              Lorem ipsum
+            </li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+          </ul>
+        </div>
+        <div class="footerDiv4">
+          <ul class="footerDiv4List footerDivList">
+            <li class="footerDivListItem footerDivListFirstItem">
+              Lorem ipsum
+            </li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+          </ul>
+        </div>
+        <div class="footerDiv5">
+          <ul class="footerDiv5List footerDivList">
+            <li class="footerDivListItem footerDivListFirstItem">
+              Lorem ipsum
+            </li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+            <li class="footerDivListItem">Lorem ipsum</li>
+          </ul>
+        </div>
+      </footer>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+    <script src="contact.js"></script>
+    <script src="jquery.confetti.js"></script>
+  </body>
+</html>
